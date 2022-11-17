@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #e4f1f0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    background-color: #004953;
+}
+
+#navbar{
+    width: 100%;
+    list-style: none;
+    font-size: 25px;
+    padding-left: 278px;
+    padding-top: 13px;
+}
+
+.navbar_link{
+    float: left;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: white;
+    padding-left: 30px;
+    float: left;
+}
+
+.profil{
+    text-align: right;
+    float: right;
+    padding-left: auto;
+}
+
+#content{
+    width: 100%;
+    display: flex;
+}
+
+.sidebar{
+    width: 200px;
+    min-height: 869px;
+    background-color: #003B43;
+}
+
+.steps{
+    width: 100%;
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 140px;
+}
+
+.steps a{
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+}
+
+.steps_link{
+    padding: 16px;
+}
+
+.registry1{
+    width: 100%;
+    padding-top: 32px;
+    background-color: #E4F1F0;
+}
+
+#section1 {
+    width: 1226px;
+    padding-top: 32px;
+    background-color: #E4F1F0;
+    display: flex;
+    padding-left: 129px;
+}
+
+h2 {
+    font-size: 20px;
+}
+.month{
+    height: 58px;
+    padding-right: 129px;
+}
+
+.drop_down{
+    width: 150px;
+    height: 30px;
+    border: solid 1px black;
+}
+
+.year{
+    height: 58px;
+    padding-right: 129px;
+}
+
+.campus{
+    height: 58px;
+}
+
+option {
+    border: solid 1px black;
+}
+
+#section2 {
+    width: 1226px;
+    padding-top: 32px;
+    background-color: #E4F1F0;
+    padding-left: 129px;
+}
+
+.education_grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 66px;
+    row-gap: 8px;
+}
+
+.education_grid_item {
+    
+}
