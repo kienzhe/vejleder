@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
 
             <div class="box_grid2">
                 <input type="password" name="password" id="password" placeholder="Password">
-                <button id="btn_login">LogIn</button>
+                <button id="button_login"><a href="registration-1.php">LogIn</a></button>
             </div>
     
             <div class="box_grid3">
