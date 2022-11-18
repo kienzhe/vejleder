@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -319,6 +323,8 @@
                             <label for="Økonomi & IT">Økonomi & IT</label>
                     </div>
                 </form>
+
+                <button id="next_button"><a href="registration-2.php">Næste</a></button>
             </section>
         </div> 
     </div>
