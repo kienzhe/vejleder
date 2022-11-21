@@ -71,7 +71,7 @@ nav{
     padding: 16px;
 }
 
-.registry1{
+.registry2{
     width: 100%;
     padding-top: 32px;
     background-color: #E4F1F0;
@@ -88,7 +88,7 @@ nav{
 h2 {
     font-size: 20px;
 }
-.month{
+.gender{
     height: 58px;
     padding-right: 129px;
 }
@@ -99,7 +99,7 @@ h2 {
     border: solid 1px black;
 }
 
-.year{
+.inquiry{
     height: 58px;
     padding-right: 129px;
 }
@@ -122,4 +122,23 @@ h2 {
     grid-auto-flow: column;
     column-gap: 64px;
     row-gap: 8px;
+}
+
+.buttons {
+    float: left;
+    width: 398px;;
+}
+
+#back_button {
+    height: 30px;
+    width: 74px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    float: left;
+}
+
+#back_button a {
+    text-decoration: none;
+    color: white;
 }
