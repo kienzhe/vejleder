@@ -99,6 +99,12 @@ h2 {
     border: solid 1px black;
 }
 
+.search{
+    width: 150px;
+    height: 30px;
+    border: solid 1px black;
+}
+
 .inquiry{
     height: 58px;
     padding-right: 129px;
@@ -124,9 +130,18 @@ h2 {
     row-gap: 8px;
 }
 
+.info {
+    height: 16px;
+    width: 16px;
+}
+
+.buttons_box {
+    width: 100%;
+}
+
 .buttons {
-    float: left;
-    width: 398px;;
+    float: right;
+width: 398px;
 }
 
 #back_button {
@@ -135,10 +150,24 @@ h2 {
     font-size: 20px;
     color: white;
     background-color: black;
-    float: left;
+    margin-right: 130px;
 }
 
 #back_button a {
+    text-decoration: none;
+    color: white;
+}
+
+#registrate {
+    height: 45px;
+    width: 154px;
+    font-size: 20px;
+    color: white;
+    background-color: #22973A;
+    border: none;
+}
+
+#registrate a {
     text-decoration: none;
     color: white;
 }
