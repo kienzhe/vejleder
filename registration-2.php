@@ -32,7 +32,7 @@
             </ul>
         </div>
 
-        <div class="registry1">
+        <div class="registry2">
 
             <section id="section1">
                 <div class="gender">
@@ -174,6 +174,11 @@
                     </div>
                 </form>
 
+                <div class="buttons">
+                    <button id="back_button"><a href="registration-1.php">Tilbage</a></button>
+
+                    <button id= "registrate"></button>
+                </div>
             </section>
         </div> 
     </div>
