@@ -99,6 +99,12 @@ h2 {
     border: solid 1px black;
 }
 
+.search{
+    width: 150px;
+    height: 30px;
+    border: solid 1px black;
+}
+
 .year{
     height: 58px;
     padding-right: 129px;
