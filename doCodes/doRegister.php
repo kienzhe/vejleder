@@ -19,5 +19,11 @@ foreach($topics as $key => $topic){
 $user = $_SESSION['idUser'];
 $sql = "INSERT INTO registration (year, month, conversation, person_type, inquiry_type, educations_id, campus_id, counselor_id, topics_id)
 VALUES ('$year', '$month', '$conversation', '$person_type', '$inquiry', '$education', '$campus', '$user', '$topic_string')";
-echo $sql;
+
+
+if ($dbCon->query($sql) === TRUE) {
+      header('LOCATION:/vejleder/registration.php?s=registration'); 
+} else {
+          header('LOCATION:/vejleder/registration.php?f=registration');
+}
 ?>
