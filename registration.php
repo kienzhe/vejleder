@@ -17,37 +17,25 @@ $allTopics = $dbCon->query("select * from topics");
     <meta name="description" content="float">
     <meta name="viewpoint" content="width=device-width, initial-scale-1">
     <title>Registering</title>
-
+    <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" type="text/css" href="registration.css">
-
 </head>
 
   <body>
-    <nav>
-        <ul id="navbar">
-            <li class="navbar_link"><a href="#">Registration</a></li>
-            <li class="navbar_link"><a href="#">Dashboard</a></li>
-            <li class="navbar_link"><a href="#">Admin</a></li>
-            <?php
-            if(isset($_SESSION["user"])){
-                ?>
-                <li class="profil"><a href="#">blablabla</a></li>
-                <?php
-            }
-            ?>
-        </ul>
-    </nav>
+<?php include('nav.php'); ?>
 
     <div id="content">
-      <div class="sidebar">
-            <ul class="steps">
-                <li class="steps_link"><a href="#">Del 1</a></li>
-                <li class="steps_link"><a href="#">Del 2</a></li>
-            </ul>
-        </div>
+        <?php
+        if($_GET['s'] === 'registration'){
+            ?>
+                <div id="modalBox">
+                    <h1>WUHUUUU</h1>
+                </div>
+            <?php
+        }
+        ?>
         <form action="doCodes/doRegister.php" method="POST">
         <div id="registry1">
-
             <section id="section1">
                 
                 <div class="month">
@@ -100,12 +88,14 @@ $allTopics = $dbCon->query("select * from topics");
             </section>
 
             <section id="section2">
+
                 <h2>Uddannelse</h2> 
-                <input class="drop_down" type="text" placeholder="Uddannelse" name="search">
+                <input class="drop_down" id="education_container_search" onkeyup="searchbar('#education_container')" type="text" placeholder="Uddannelse" name="search">
+                <div class="flex_box" id="education_container">
                 <?php
                     while($row = $allEducation->fetch_assoc()){
                     ?>
-                    <div class="education_grid_item">
+                    <div class="grid_item">
                         <input type="radio" id="<?php echo $row["name"]; ?>" name="education" value="<?php echo $row["id"]; ?>">
                         <label for="<?php echo $row["name"]; ?>"><?php echo $row["name"]; ?></label>
                     </div>
@@ -113,7 +103,7 @@ $allTopics = $dbCon->query("select * from topics");
                     <?php
                     }
                     ?>
-
+</div>
                 
                 <button id="next_button" type="button">Næste</button>
             </section>
@@ -155,13 +145,14 @@ $allTopics = $dbCon->query("select * from topics");
                 </div>
             </section>
 
-            <section id="section4">
+            <section id="section2">
                 <h2>Emne</h2> 
-                <input class="search" type="text" placeholder="Emne" name="search">
+                <input class="search" id="topic_container_search" onkeyup="searchbar('#topic_container')" type="text" placeholder="Emne" name="search">
+                <div class="flex_box" id="topic_container">
                 <?php
                     while($row = $allTopics->fetch_assoc()){
                     ?>
-                    <div class="subject_grid_item">
+                    <div class="grid_item">
                         <input type="checkbox" id="<?php echo $row["title"]; ?>" name="topics[]" value="<?php echo $row["id"]; ?>">
                         <label for="<?php echo $row["title"]; ?>"><?php echo $row["title"]; ?></label>
                         <?php
@@ -176,14 +167,14 @@ $allTopics = $dbCon->query("select * from topics");
                     <?php
                     }
                     ?>
-                   
+                   </div>
             
 
                 <div class="buttons_box">
                     <div class="buttons">
                         <button id="back_button" type="button">Tilbage</button>
 
-                        <input type="submit" name="submit" value="Registrer">
+                        <input type="submit" id="registrate" name="submit" value="Registrer">
                     </div>
                 </div>
             </section>
@@ -192,5 +183,8 @@ $allTopics = $dbCon->query("select * from topics");
     </div>
     
     <script src="registration.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="search.js"></script>
   </body>
 </html>
+
