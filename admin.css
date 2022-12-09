@@ -1,0 +1,46 @@
+.adminSidebar{
+    width: 200px;
+    min-height: 869px;
+    background-color: #003B43;
+    color: #ffffff;
+}
+
+.adminPad{
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 50px;
+}
+
+#content{
+    display: flex;
+}
+
+#eduEdit, #topicEdit, #counslorEdit{
+    width: 1226px;
+    margin: 0 auto;
+    
+}
+
+table{
+    width: 900px;
+    text-align: left;
+}
+
+th,td{
+    padding: 4px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd){
+    background-color: #ffffff;
+}
+
+th{
+    background-color: #e4f1f0;
+}
