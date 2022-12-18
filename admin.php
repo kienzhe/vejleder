@@ -1,3 +1,6 @@
+<?php
+include("includes/dbcon.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,7 +108,6 @@
                     <td>Bygningskonstruktør, Datamatiker</td>
                     <td>UCL Kolding</td>
                     <td><input type="button" value="Rediger"> <input type="button" value="Slet"></td>
-                    <!-- <label for="<?php echo $row["name"]; ?>"><?php echo $row["name"]; ?></label> -->
                 </tr>
             </table>
         </div>
