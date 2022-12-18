@@ -12,14 +12,14 @@ $result = $dbCon->query($sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
 $count = mysqli_num_rows($result);  
 
-
-if($email== $row['email'] && $password == $row['password']){ 
+if($email=== $row['email'] && $password === $row['password'] && $count !== 0){
        $_SESSION['user'] = $row['email']; 
         $_SESSION['userPass'] = $row['password']; 
         $_SESSION['idUser'] = $row['id'];
         $idUser = $row['id']; 
       header('LOCATION:/vejleder/registration.php'); 
+      
    }else{
-      header('LOCATION: /?f=login');
+      header('LOCATION: /vejleder/?f=login');
    }
 ?>
