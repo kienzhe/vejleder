@@ -4,6 +4,15 @@
     justify-content: space-around;
 }
 
+#modalBox{
+    display:none;
+    width:300px;
+    height:200px;
+    position:absolute;
+    background-color:white;
+    border:solid black;
+}
+
 .steps{
     width: 100%;
     list-style: none;
@@ -33,7 +42,6 @@
     padding-top: 32px;
     background-color: #E4F1F0;
     display: flex;
-    padding-left: 129px;
 }
 
 h2 {
@@ -48,12 +56,14 @@ h2 {
     width: 150px;
     height: 30px;
     border: solid 1px black;
+    font-size:18px;
 }
 
 .search{
     width: 150px;
     height: 30px;
     border: solid 1px black;
+    font-size:18px;
 }
 
 .year{
@@ -69,7 +79,7 @@ h2 {
     max-width: 1226px;
     padding-top: 32px;
     background-color: #E4F1F0;
-    padding-left: 129px;
+    font-size:18px;
     
 }
 .flex_box{
@@ -108,7 +118,6 @@ h2 {
     padding-top: 32px;
     background-color: #E4F1F0;
     display: flex;
-    padding-left: 129px;
 }
 
 .gender{
@@ -138,7 +147,6 @@ h2 {
     width: 1226px;
     padding-top: 32px;
     background-color: #E4F1F0;
-    padding-left: 129px;
 }
 
 .info {
