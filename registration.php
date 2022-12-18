@@ -1,14 +1,27 @@
 <?php
 include("includes/dbcon.php");
-$allMonth = $dbCon->query("select month from registration");
-// session_start();
 
-// if(isset($_POST['next']))
 $allCampus = $dbCon->query("select * from campus");
 
 $allEducation = $dbCon->query("select * from educations");
 
 $allTopics = $dbCon->query("select * from topics");
+
+$monthArray = [];
+$danishMonths = [1 => 'Januar', 2 => 'Februar', 3 => 'Marts', 4 => 'April', 5 => 'Maj', 6 => 'Juni', 7 => 'Juli', 8 => 'August', 9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'December'];
+for($i = 1; $i <= 12; $i++){
+
+    if(!array_key_exists($i, $monthArray)){
+        $monthArray[$i] = $danishMonths[$i];
+    }
+};
+$yearArray = [];
+for($year = 2016; $year <= (date('Y') +1); $year++){
+    if(!in_array($year, $yearArray)){
+        $yearArray[] = $year;
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -25,35 +38,23 @@ $allTopics = $dbCon->query("select * from topics");
 <?php include('nav.php'); ?>
 
     <div id="content">
-        <?php
-        if($_GET['s'] === 'registration'){
-            ?>
-                <div id="modalBox">
-                    <h1>WUHUUUU</h1>
-                </div>
-            <?php
-        }
-        ?>
+        <div id="modalBox">
+                    <h1>Din registering er gået igennem</h1>
+        </div>
         <form action="doCodes/doRegister.php" method="POST">
         <div id="registry1">
             <section id="section1">
                 
                 <div class="month">
                     <h2>Måned</h2>
-
                     <select class="drop_down" name="month">
-                        <option value="januar">Januar</option>
-                        <option value="febuar">Februar</option>
-                        <option value="marts">Marts</option>
-                        <option value="april">April</option>
-                        <option value="maj">Maj</option>
-                        <option value="juni">Juni</option>
-                        <option value="Juli">Juli</option>
-                        <option value="august">August</option>
-                        <option value="september">September</option>
-                        <option value="oktober">Oktober</option>
-                        <option value="november">November</option>
-                        <option selected value="december">December</option>
+                        <?php
+                            foreach($monthArray as $monthNum => $monthName){
+                                echo "<option value='$monthNum' ";
+                                if($monthNum == date('n')){ echo "selected"; }
+                                echo ">$monthName</option>";
+                            }
+                        ?>
                     </select>
                 </div>
 
@@ -61,14 +62,13 @@ $allTopics = $dbCon->query("select * from topics");
                     <h2>År</h2>
                     
                     <select class="drop_down" name="year">
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option selected value="2022">2022</option>
-                        <option value="2023">2023</option>
+                        <?php
+                        foreach($yearArray as $yearNum => $year){
+                                echo "<option value='$year' ";
+                                if($year == date('Y')){ echo "selected"; }
+                                echo ">$year</option>";
+                            }
+                        ?>
                     </select>
                 </div>
 
@@ -90,7 +90,7 @@ $allTopics = $dbCon->query("select * from topics");
             <section id="section2">
 
                 <h2>Uddannelse</h2> 
-                <input class="drop_down" id="education_container_search" onkeyup="searchbar('#education_container')" type="text" placeholder="Uddannelse" name="search">
+                <input class="drop_down" id="education_container_search" onkeyup="searchbar('#education_container')" type="text" placeholder="Søg Uddannelse" name="search">
                 <div class="flex_box" id="education_container">
                 <?php
                     while($row = $allEducation->fetch_assoc()){
@@ -147,7 +147,7 @@ $allTopics = $dbCon->query("select * from topics");
 
             <section id="section2">
                 <h2>Emne</h2> 
-                <input class="search" id="topic_container_search" onkeyup="searchbar('#topic_container')" type="text" placeholder="Emne" name="search">
+                <input class="search" id="topic_container_search" onkeyup="searchbar('#topic_container')" type="text" placeholder="Søg Emne" name="search">
                 <div class="flex_box" id="topic_container">
                 <?php
                     while($row = $allTopics->fetch_assoc()){
@@ -181,10 +181,9 @@ $allTopics = $dbCon->query("select * from topics");
         </div> 
         </form>
     </div>
-    
+
     <script src="registration.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="search.js"></script>
   </body>
 </html>
-
