@@ -2,7 +2,6 @@
 include("includes/dbcon.php");
 //$allTopics = $dbCon->query("select * from topics");
 
-
 ?>
 
 <!DOCTYPE html>
