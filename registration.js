@@ -12,3 +12,12 @@ back.addEventListener("click", function(){
     registry1.style.display="block";
     registry2.style.display="none";
 })
+
+var url = window.location.href;
+        if(url.includes("?s")){
+            setTimeout(function(){
+                document.querySelector("#modalBox").style.display = "none";
+            }, 5000);
+           document.querySelector("#modalBox").style.display = "block";
+    
+}
