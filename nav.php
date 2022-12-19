@@ -21,7 +21,6 @@ $_SESSION['first_name'] = $row['first_name'];
                 
                 <li class="profil"><?php print_r($_SESSION['first_name']) ?></li>
                 <li class="profil2"><a href="doCodes/doLogout.php">Logud</a></li>
-                <!--<li class="profil"><a href="doCodes/doLogout.php">Logud</a></li>-->
                 <?php
             }
             ?>
